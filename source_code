@@ -1,0 +1,144 @@
+### This game asks the user several different questions ###
+### to build their own adventure; how they answer determines ###
+### what scenario comes next ###
+
+### Welcome screen ###
+print("Welcome to the Choose Your Own Adventure game!")
+
+playing = input("Would you like to play? ")
+if playing.lower() != "yes":
+	quit()
+
+print("Okay, let's begin.")
+
+### The adventure starts ###
+name = input("Type your name: ")
+print("Welcome " + str(name) + " to this adventure!")
+
+answer = input("You just left town on a dirt road and it forks left and right. Which direction will you go? ")
+
+if answer.lower() == "left":
+	answer = input("The path is clear and you come to a river. You can try to walk around it or swim across it. What do you choose? Type walk or swim: ")
+
+	if answer.lower() == "swim":
+		answer = input("The current pulls you downstream but you successfully swam across. Upon exiting the river, you see a campsite. You can visit the campsite or hide. What would you like to do? Type visit or hide: ")
+		
+		if answer.lower() == "visit":
+			print("The camp was full of bandits and they killed you on site. You lose.")
+
+		elif answer.lower() == "hide":
+			print("The camp is full of bandits and one of them found you while taking a walk. They killed you on site. You lose.")
+
+		else:
+			print("Answer is not valid. You lose.")
+
+	elif answer.lower() == "walk":
+		print("You walked for many miles and was never able to get around the river. You also ran out of food and starved to death. You lose.")
+
+	else:
+		print("Answer is not valid. You lose.")
+
+elif answer.lower() == "right":
+	answer = input("You walk along the dirt road until you arrive at a new town. It's now late at night. You can either go to the tavern for a drink or the inn to sleep. What will you do? Type drink or inn: ")
+
+	if answer.lower() == "drink":
+		answer = input("You had one too many and got in a fight, which landed you in jail. You can either try to escape or wait it out. Type escape or wait: ")
+
+		if answer.lower() == "escape":
+			answer == input("You successfully escape but can no longer stay in town. You can either leave through the forest or travel down a well kept road. Type forest or road: ")
+
+			if answer.lower() == "forest":
+				answer = input("You travel through the forest all day but now it's getting dark and raining. You notice an abandoned cabin up the hill. Do you stay there for the night or try to build a shelter? Type cabin or shelter: ")
+
+				if answer.lower() == "cabin":
+					answer = input("The cabin keeps you dry but you don't sleep very good. It's the next day and you head out. You come to a steep hillside. Do you scale the hill or turn back? Type hill or back: ")
+
+					if answer.lower() == "hill":
+						print("You lose your footing and fall down the hill to your death. You lose.")
+
+					elif answer.lower() == "back":
+						answer = input("The guards were on your trail and caught you again. You're back in jail. You can either try to escape or wait. Type escape or wait: ")
+
+						if answer.lower() == "escape":
+							print("The escape route is no longer available. You're stuck in the jail but end up getting sick and dying. You lose.")
+
+						elif answer.lower() == "wait":
+							print("Deciding to wait has caused you get sick and die. You lose.")
+
+						else:
+							print("Answer is not valid. You lose.")
+
+					else:
+						print("Answer is not valid. You lose.")
+
+				elif answer.lower() == "shelter":
+					print("You're unable to build a shelter because it's too dark to see. You get sick from the cold rain and die. You lose.")
+
+				else:
+					print("Answer is not valid. You lose.")
+
+			elif answer.lower() == "road":
+				answer = input("A guard patrolling the road recognized you and arrested you. You're back in jail. Will you try to escape again or wait it out? Type escape or wait: ")
+
+				if answer.lower() == "escape":
+					print("The escape route is no longer available. You're stuck in the jail but end up getting sick and dying. You lose.")
+
+				elif answer.lower() == "wait":
+					print("Deciding to wait has caused you get sick and die. You lose.")
+
+				else:
+					print("Answer is not valid. You lose.")
+
+			else:
+				print("Answer is not valid. You lose.")
+
+		elif answer.lower() == "wait":
+			print("Deciding to wait has caused you get sick and die. You lose.")
+
+		else:
+			print("Answer is not valid. You lose.")
+
+	elif answer.lower() == "sleep":
+		answer = input("You wake well rested and ready to continue your journey. You head out of town and approach a bridge. You can walk over the bridge or under. Type over or under: ")
+
+		if answer.lower() == "over":
+			answer = input("While crossing the bridge you encounter a bandit. You can fight him with your sword or run away. Type fight or run: ")
+
+			if answer.lower() == "fight":
+				answer = input("The bandit only had a bow and arrow and you were able to take him out with your sword before he could draw. You've crossed the bridge and encountered a cave. Will you enter? Type yes or no: ")
+
+				if answer.lower() == "yes":
+					answer = input("The cave forks to the left and right. Which direction will you go? ")
+
+					if answer.lower() == "left":
+						print("You walk into a large, open area and find several chests of gold! Your adventure has paid off. You win!")
+
+					elif answer.lower() == "right":
+						print("You woke a sleeping bear and he killed you. You lose.")
+
+					else:
+						print("Answer is not valid. You lose.")
+
+				elif answer.lower() == "no":
+					print("Sounds like you're not cut out for this adventure. You lose")
+
+			elif answer.lower() == "run":
+				print("The bandit had a bow and arrow and dropped you like a sack of potatoes. You lose.")
+
+			else:
+				print("Answer is not valid. You lose.")
+
+		elif answer.lower() == "under":
+			print("On the way down the hill beneath the bridge, you trip and fall. You hit your head on a rock and die. You lose.")
+
+		else:
+			print("Answer is not valid. You lose.")
+
+	else:
+		print("Answer is not valid. You lose.")
+
+else:
+	print("Answer is not valid. You lose.")
+
+### Closing screen ###
+print("Until next time " + str(name) + "!")
